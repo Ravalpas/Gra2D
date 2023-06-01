@@ -1,0 +1,94 @@
+﻿<Page
+    x:Class="Gra2D.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Gra2D"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="Nazwa bohatera: " Style="{ThemeResource HeaderTextBlockStyle}"/>
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="1" Margin="15" Orientation="Horizontal">
+            <TextBlock Text="pż bohatera:" Style="{ThemeResource HeaderTextBlockStyle}" Margin="10, -10, 0, 0"/>
+            <ProgressBar Width="200" Height="20" Minimum="0" Maximum="100" Value="100" Foreground="Green"/>
+            <TextBlock Text="pż przeciwnika:" Style="{ThemeResource HeaderTextBlockStyle}" Margin="10, -10, 0, 0"/>
+            <ProgressBar Width="200" Height="20" Minimum="0" Maximum="100" Value="100" Foreground="Green"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Bohater: " Margin="100, 0, 0, 0"/>
+            <TextBlock x:Name="nazwaBohater" Text="TU BĘDZIE NAZWA"/>
+
+            <TextBlock Text="Przeciwnik: " Margin="500, 0, 0, 0"/>
+            <TextBlock x:Name="nazwaPrzeciwnik" Text="???"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Punkty życia: "/>
+                    <TextBlock x:Name="zycieBohater" Text="???"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Obrażenia: "/>
+                    <TextBlock x:Name="obrazeniaBohater" Text="???"/>
+                </StackPanel>
+            </StackPanel>
+            <Image Name="bohaterWyglad" Width="300" Height="300"  Source="Assets/Knight.jpg"/>
+            <TextBlock x:Name="Przebieg" Width="300" Height="300"/>
+            <Image Name="przeciwnikWyglad" Width="300" Height="300" Source="Assets/znakZapytania.jpg"/>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Punkty życia: "/>
+                    <TextBlock x:Name="zycieWrog" Text="???"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Obrażenia: "/>
+                    <TextBlock x:Name="obrazeniaWrog" Text="???"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <TextBlock Text="Uzbrojenie: " Margin="10"/>
+            <CheckBox x:Name="checkBoxAtak" Content="topór dwóręczny" Click="checkBoxAtak_Click" Margin="10"/>
+            <CheckBox x:Name="checkBoxObrona" Content="tarcza i miecz" Click="checkBoxObrona_Click" Margin="10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <Button x:Name="buttonFight" Width="100" Height="50" Margin="5" Content="Walcz." Click="buttonFight_Click" IsEnabled="False"/>
+            <Button x:Name="buttonTravel" Width="100" Height="50" Margin="5" Content="Wyrusz." Click="buttonTravel_Click"/>
+            <Button x:Name="buttonRetreat" Width="130" Height="50" Margin="5" Content="Odwrót taktyczny." Click="buttonRetreat_Click" IsEnabled="False"/>
+            <TextBlock Text="Ilość dostępnych odwrotów: " Margin="5"/>
+            <TextBlock x:Name="iloscOdwrotow" Text="?" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal">
+            <TextBlock Text="Ilość doświadczenia: "/>
+            <TextBlock Name="expAkt" Text="???"/>
+            <TextBlock Text=" / "/>
+            <TextBlock Name="expMax" Text="???"/>
+        </StackPanel>
+
+
+        <ProgressBar Grid.Row="7" HorizontalAlignment="Left" Height="50" Width="1200" Background="AntiqueWhite"  Value="50"/>
+
+        </Grid>
+</Page>
